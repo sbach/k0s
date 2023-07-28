@@ -138,6 +138,10 @@ spec:
     spec:
       serviceAccountName: coredns
       tolerations:
+        - effect: "NoExecute"
+          operator: "Exists"
+        - effect: "NoSchedule"
+          operator: "Exists"
         - key: "CriticalAddonsOnly"
           operator: "Exists"
         - key: "node-role.kubernetes.io/master"
